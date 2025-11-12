@@ -16,18 +16,18 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads")); // serve image files
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-// ✅ Connect to MongoDB
+// // ✅ Connect to MongoDB
 
-app.use(express.static(path.join(__dirname, "../hc-finvest-website/build")));
+// app.use(express.static(path.join(__dirname, "../hc-finvest-website/build")));
 
-app.get(/.*/, (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../hc-finvest-website/build", "index.html")
-  );
-});
+// app.get(/.*/, (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, "../hc-finvest-website/build", "index.html")
+//   );
+// });
 
 mongoose
   .connect(process.env.MONGO_URI)
